@@ -1,90 +1,88 @@
-# Welcome to GitHub
+# Bem vindo ao processo seletivo para desenvolvedor mobile da dti digital, obrigado por participar!
 
-Welcome to GitHub—where millions of developers work together on software. Ready to get started? Let’s learn how this all works by building and publishing your first GitHub Pages website!
+Segue a descrição da nossa atividade, alguns pontos importantes:
 
-## Repositories
+- Você terá 4 dias para enviar o retorno da atividade, a partir da data que você recebeu o convite para participar
+- O código final deve ser postado no github e o link de acesso ao repositório deve ser enviado para o e-mail jordann.alessandro@dtidigital.com.br
+- Devem ser passadas as instruções de como rodar o seu app (se tem que baixar alguma dependência, ou qualquer configuração necessária para compilar)
+- Sua apk deve conseguir executar sem problemas pelo menos da api 21 a 29 do android.
+- Sua apk deve apresentar o mesmo comportamento de layout para telas de 4,7" a 6,8" 
 
-Right now, we’re in your first GitHub **repository**. A repository is like a folder or storage space for your project. Your project's repository contains all its files such as code, documentation, images, and more. It also tracks every change that you—or your collaborators—make to each file, so you can always go back to previous versions of your project if you make any mistakes.
+## Descrição
 
-This repository contains three important files: The HTML code for your first website on GitHub, the CSS stylesheet that decorates your website with colors and fonts, and the **README** file. It also contains an image folder, with one image file.
+Seu app terá 2 telas: 
+  - uma de login que deve conter 1 logo de sua escolha, uma caixa de texto para usuário e outra para senha e um botão de login. 
+  - outra após o login que será uma lista de eventos, contendo uma imagem que representa o evento, o título, uma descrição e a data.
 
-## Describe your project
+Seu app consumira 2 rotas:
 
-You are currently viewing your project's **README** file. **_README_** files are like cover pages or elevator pitches for your project. They are written in plain text or [Markdown language](https://guides.github.com/features/mastering-markdown/), and usually include a paragraph describing the project, directions on how to use it, who authored it, and more.
+Serviço 1: Realiza o login, nele teremos como resposta um token que deve ser salvo no shared preferences e o tempo de expiração do token (em minutos). Quando o tempo de expiração for concluído o usuário deve ser direcionado a tela de login novamente.
 
-[Learn more about READMEs](https://help.github.com/en/articles/about-readmes)
-
-## Your first website
-
-**GitHub Pages** is a free and easy way to create a website using the code that lives in your GitHub repositories. You can use GitHub Pages to build a portfolio of your work, create a personal website, or share a fun project that you coded with the world. GitHub Pages is automatically enabled in this repository, but when you create new repositories in the future, the steps to launch a GitHub Pages website will be slightly different.
-
-[Learn more about GitHub Pages](https://pages.github.com/)
-
-## Rename this repository to publish your site
-
-We've already set-up a GitHub Pages website for you, based on your personal username. This repository is called `hello-world`, but you'll rename it to: `username.github.io`, to match your website's URL address. If the first part of the repository doesn’t exactly match your username, it won’t work, so make sure to get it right.
-
-Let's get started! To update this repository’s name, click the `Settings` tab on this page. This will take you to your repository’s settings page. 
-
-![repo-settings-image](https://user-images.githubusercontent.com/18093541/63130482-99e6ad80-bf88-11e9-99a1-d3cf1660b47e.png)
-
-Under the **Repository Name** heading, type: `username.github.io`, where username is your username on GitHub. Then click **Rename**—and that’s it. When you’re done, click your repository name or browser’s back button to return to this page.
-
-<img width="1039" alt="rename_screenshot" src="https://user-images.githubusercontent.com/18093541/63129466-956cc580-bf85-11e9-92d8-b028dd483fa5.png">
-
-Once you click **Rename**, your website will automatically be published at: https://your-username.github.io/. The HTML file—called `index.html`—is rendered as the home page and you'll be making changes to this file in the next step.
-
-Congratulations! You just launched your first GitHub Pages website. It's now live to share with the entire world
-
-## Making your first edit
-
-When you make any change to any file in your project, you’re making a **commit**. If you fix a typo, update a filename, or edit your code, you can add it to GitHub as a commit. Your commits represent your project’s entire history—and they’re all saved in your project’s repository.
-
-With each commit, you have the opportunity to write a **commit message**, a short, meaningful comment describing the change you’re making to a file. So you always know exactly what changed, no matter when you return to a commit.
-
-## Practice: Customize your first GitHub website by writing HTML code
-
-Want to edit the site you just published? Let’s practice commits by introducing yourself in your `index.html` file. Don’t worry about getting it right the first time—you can always build on your introduction later.
-
-Let’s start with this template:
-
-```
-<p>Hello World! I’m [username]. This is my website!</p>
-```
-
-To add your introduction, copy our template and click the edit pencil icon at the top right hand corner of the `index.html` file.
-
-<img width="997" alt="edit-this-file" src="https://user-images.githubusercontent.com/18093541/63131820-0794d880-bf8d-11e9-8b3d-c096355e9389.png">
+  rota -> https://testapi.io/api/dti-triforce-trib/login
+  tipo -> POST
+  headers -> não possui
+  requestBody: 
+  {
+	  "username": "Joao.lucas",
+	  "pass": "123456"
+  }
+  response:
+  {
+    "token": "45848cssaev-scascsac-csacsav",
+    "tempoExpirar": "2"
+  }
+  http status do response: 200
+  Obs: idependente do usuário e senha informados a resposta será essa, todavia algum deve ser enviado (e feita das devidas validações).
 
 
-Delete this placeholder line:
+Serviço 2: Retorna a lista de eventos para a segunda tela.
 
-```
-<p>Welcome to your first GitHub Pages website!</p>
-```
+    rota ->  https://testapi.io/api/dti-triforce-trib/eventos-mensais
+    tipo -> GET
+    headers -> não possui
+    response:
+    {
+      "eventos": [
+          {
+              "id": 1,
+              "nome": "Churrasco social em prol da Apae",
+              "descricao": "Será um churrasco muito bacana, venha e participe",
+              "data": 1568948400000,
+              "rotaImagem": "https://static.fecam.net.br/thumbs/681/2577965_resize_1500_840.jpg"
+          },
+          {
+              "id": 2,
+              "nome": "Bingo beneficente vila vicentina",
+              "descricao": "Bingo em prol da vila vicentina e comunidade do idoso",
+              "data": 1568516400000,
+              "rotaImagem": "https://s3.portalt5.com.br/imagens/2017-10-05-PHOTO-00000034.jpg?mtime=20171009204746" 
+          },
+          {
+              "id": 3,
+              "nome": "Feijoada do Graac",
+              "descricao": "Traga sua família para comer uma feijoada muito boa",
+              "data": 1569380400000,
+              "rotaImagem": "https://www.spdm.org.br/media/k2/items/cache/867519228d1d5325856fc61d710ded0e_L.jpg" 
+          },
+          {
+              "id":4,
+              "nome": "Churrasco social em prol da Apae",
+              "descricao": "Será um churrasco muito bacana, venha e participe",
+              "data": 1567306800000,
+              "rotaImagem": "" 
+          }
+        ]
+    }
 
-Then, paste the template to line 15 and fill in the blanks.
+A data do evento está escrita como um long, deve ser exibida no formato "dd/MM/yyyy". Os eventos devem aparecer na tela ordenados pela data, sendo o do topo da lista com a data menor. As imagens dos eventos são links que devem serem consumidos. As imagens virão de tamanhos diversos e devem se adequar ao seu layout da forma que preferir. Se a imagem não possuir um link deve ser utilizado uma imagem de sua escolha. A segunda tela é apenas de exibição dos dados e o layout fica ao seu agrado. Contudo todos os dados do evento devem ser exibidos de alguma forma.
 
-<img width="1032" alt="edit-githuboctocat-index" src="https://user-images.githubusercontent.com/18093541/63132339-c3a2d300-bf8e-11e9-8222-59c2702f6c42.png">
+## O que iremos avaliar:
+  
+  -Boas práticas de progamação
+  -arquitetura utilizada
+  -bibliotecas utilizadas
+  -uso do git
+  -Se o comportamento do app conforme o que foi descrito 
 
 
-When you’re done, scroll down to the `Commit changes` section near the bottom of the edit page. Add a short message explaining your change, like "Add my introduction", then click `Commit changes`.
-
-
-<img width="1030" alt="add-my-username" src="https://user-images.githubusercontent.com/18093541/63131801-efbd5480-bf8c-11e9-9806-89273f027d16.png">
-
-Once you click `Commit changes`, your changes will automatically be published on your GitHub Pages website. Refresh the page to see your new changes live in action.
-
-:tada: You just made your first commit! :tada:
-
-## Extra Credit: Keep on building!
-
-Change the placeholder Octocat gif on your GitHub Pages website by [creating your own personal Octocat emoji](https://myoctocat.com/build-your-octocat/) or [choose a different Octocat gif from our logo library here](https://octodex.github.com/). Add that image to line 12 of your `index.html` file, in place of the `<img src=` link.
-
-Want to add even more code and fun styles to your GitHub Pages website? [Follow these instructions](https://github.com/github/personal-website) to build a fully-fledged static website.
-
-![octocat](./images/create-octocat.png)
-
-## Everything you need to know about GitHub
-
-Getting started is the hardest part. If there’s anything you’d like to know as you get started with GitHub, try searching [GitHub Help](https://help.github.com). Our documentation has tutorials on everything from changing your repository settings to configuring GitHub from your command line.
+Te desejamos boa sorte e esperamos que você venha pro nosso time! #vemSerDti
