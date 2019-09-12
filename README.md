@@ -11,7 +11,7 @@ Segue a descrição da nossa atividade, alguns pontos importantes:
 ## Descrição
 
 Seu app terá 2 telas: 
-  - uma de login que deve conter 1 logo de sua escolha, uma caixa de texto para usuário e outra para senha e um botão de login. 
+  - uma de login que deve conter 1 logo de sua escolha, 2 caixas de texto, uma para usuário e outra para senha e um botão de login. 
   - outra após o login que será uma lista de eventos, contendo uma imagem que representa o evento, o título, uma descrição e a data.
 
 Seu app consumira 2 rotas:
@@ -34,8 +34,8 @@ Serviço 1: Realiza o login, nele teremos como resposta um token que deve ser sa
 	  http status do response: 200
   
   
-  Obs: idependente do usuário e senha informados a resposta será essa, todavia algum deve ser enviado (e feita das devidas validações).
-
+  Obs: independente do usuário e senha informados a resposta será essa, todavia algum usuário e senha deve ser enviado (e feitas as devidas validações).
+Validações: Senha no mínimo 6 digitos, caixa de texto usuario deve aceitar digitos com exceção de caracteres especiais.
 
 Serviço 2: Retorna a lista de eventos para a segunda tela.
 
@@ -84,7 +84,7 @@ A data do evento está escrita como um long, deve ser exibida no formato "dd/MM/
   - arquitetura utilizada
   - bibliotecas utilizadas
   - uso do git
-  - Se o comportamento do app conforme o que foi descrito 
+  - Se o comportamento do app funciona conforme o que foi descrito 
 
 
 Te desejamos boa sorte e esperamos que você venha pro nosso time! #vemSerDti
