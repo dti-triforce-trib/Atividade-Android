@@ -18,20 +18,22 @@ Seu app consumira 2 rotas:
 
 Serviço 1: Realiza o login, nele teremos como resposta um token que deve ser salvo no shared preferences e o tempo de expiração do token (em minutos). Quando o tempo de expiração for concluído o usuário deve ser direcionado a tela de login novamente.
 
-  rota -> https://testapi.io/api/dti-triforce-trib/login
-  tipo -> POST
-  headers -> não possui
-  requestBody: 
-  {
-	  "username": "Joao.lucas",
-	  "pass": "123456"
-  }
-  response:
-  {
-    "token": "45848cssaev-scascsac-csacsav",
-    "tempoExpirar": "2"
-  }
-  http status do response: 200
+	  rota -> https://testapi.io/api/dti-triforce-trib/login
+	  tipo -> POST
+	  headers -> não possui
+	  requestBody: 
+	  {
+		  "username": "Joao.lucas",
+		  "pass": "123456"
+	  }
+	  response:
+	  {
+	    "token": "45848cssaev-scascsac-csacsav",
+	    "tempoExpirar": "2"
+	  }
+	  http status do response: 200
+  
+  
   Obs: idependente do usuário e senha informados a resposta será essa, todavia algum deve ser enviado (e feita das devidas validações).
 
 
@@ -78,11 +80,11 @@ A data do evento está escrita como um long, deve ser exibida no formato "dd/MM/
 
 ## O que iremos avaliar:
   
-  -Boas práticas de progamação
-  -arquitetura utilizada
-  -bibliotecas utilizadas
-  -uso do git
-  -Se o comportamento do app conforme o que foi descrito 
+  - Boas práticas de progamação
+  - arquitetura utilizada
+  - bibliotecas utilizadas
+  - uso do git
+  - Se o comportamento do app conforme o que foi descrito 
 
 
 Te desejamos boa sorte e esperamos que você venha pro nosso time! #vemSerDti
