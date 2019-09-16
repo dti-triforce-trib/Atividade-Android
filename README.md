@@ -2,7 +2,7 @@
 
 Segue a descrição da nossa atividade, alguns pontos importantes:
 
-- Você terá 4 dias para enviar o retorno da atividade, a partir da data que você recebeu o convite para participar
+- Você terá 3 dias para enviar o retorno da atividade, a partir da data que você recebeu o convite para participar
 - O código final deve ser postado no github e o link de acesso ao repositório deve ser enviado para o e-mail jordann.alessandro@dtidigital.com.br
 - Devem ser passadas as instruções de como rodar o seu app (se tem que baixar alguma dependência, ou qualquer configuração necessária para compilar)
 - Sua apk deve conseguir executar sem problemas pelo menos da api 21 a 29 do android.
